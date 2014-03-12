@@ -35,7 +35,7 @@
     
     articles = [NSMutableArray arrayWithArray:[parsedJSON objectForKey:@"results"]];
     
-    NSLog(@"%@", articles);
+    //NSLog(@"%@", articles);
 }
 
 #pragma mark - UITableView Delegate Methods
@@ -52,9 +52,6 @@
 {
     NSString *identifier = @"articleCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
     
     NSDictionary *articleInfo = [articles objectAtIndex:indexPath.row];
     NSString *title = [articleInfo objectForKey:@"headline"];
